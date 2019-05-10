@@ -48,13 +48,15 @@ namespace StringIO_TextView
 
         private void txtEdit_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if(e.KeyChar == 13)
+            if (e.KeyChar == (char)13)  //엔터 키를 누를 때
             {
-                if (TextCheck())
+                e.Handled = true;
+                if (TextCheck() == true)
                 {
                     this.lblResult.Text = this.OrgStr + this.txtEdit.Text;
                 }
             }
+
         }
     }
 }
